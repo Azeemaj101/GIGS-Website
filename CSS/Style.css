@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    cursor: none;
+}
+
+:root{
+    --green-color: #1dbf73;
+    --white-color: #fff;
+}
+
+/* scroll bar styling section start */
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--green-color); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--white-color); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--white-color); 
+  }
+/* scroll bar styling section end */
+
+.Green-color{
+    color: var(--green-color)
+}
+
+.BG-Green-Color{
+    background-color: var(--green-color);
+}
+
+body .cursor {
+    pointer-events: none;
+}
+
+body .cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+}
+
+body .cursor__ball circle {
+    fill: #f7f8fa;
+}
+
+
+.Custom-Font {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.Header-text {
+    line-height: 100px;
+    font-size: 5em;
+}
+
+.second-polygon {
+    position: relative;
+    left: -40px;
+    top: 15px;
+    animation: moveUpDown 1.5s infinite;
+}
+
+@keyframes moveUpDown {
+    0% {
+        top: 15;
+    }
+
+    50% {
+        top: 20px;
+        /* Adjust the value to control the height of the movement */
+    }
+
+    100% {
+        top: 15;
+    }
+}
+
+.All-polygon img {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+/* Section 1 CSS */
+.bg-header-image {
+    background-image: url("../assets/background.png");
+    /* The image used */
+    min-height: 100vh;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.custom-sm-font {
+    font-size: 14px;
+}
+
+/* Navbar Css */
+.custom-btn {
+    background: rgb(27, 180, 109);
+    background: linear-gradient(83deg, rgba(27, 180, 109, 1) 55%, rgba(15, 96, 58, 1) 100%);
+    border: none;
+    outline: transparent;
+    color: white;
+    white-space: nowrap;
+}
+
+.custom-btn:hover {
+    color: white;
+    position: relative;
+    top: -2px;
+}
+
+.custom-btn-hover:hover {
+    position: relative;
+    top: -2px;
+}
+
+/* Stack CSS */
+.card-stack {
+    position: sticky;
+    top: 5em;
+    transform-origin: center top;
+    /* margin: 0.5em; */
+    height: 800px;
+}
+
+.card-stack:nth-child(0) {
+    transform: translateY(0px);
+}
+
+.card-stack:nth-child(1) {
+    transform: translateY(16px);
+}
+
+.card-stack:nth-child(2) {
+    transform: translateY(32px);
+}
+
+.card-stack:nth-child(3) {
+    transform: translateY(48px);
+}
+
+.card-stack:nth-child(4) {
+    transform: translateY(64px);
+}
+
+.card-stack:nth-child(5) {
+    transform: translateY(80px);
+}
+
+.card-stack:nth-child(6) {
+    transform: translateY(96px);
+}
+
+.card-stack:nth-child(7) {
+    transform: translateY(112px);
+}
+
+.card-stack:nth-child(8) {
+    transform: translateY(128px);
+}
+
+.card-stack:nth-child(9) {
+    transform: translateY(144px);
+}
+
+.card-stack:nth-child(10) {
+    transform: translateY(160px);
+}
+
+.card-stack:nth-child(11) {
+    transform: translateY(176px);
+}
+
+.card-stack:nth-child(12) {
+    transform: translateY(192px);
+}
+
+.card-stack:nth-child(13) {
+    transform: translateY(208px);
+}
+
+.card-stack:nth-child(14) {
+    transform: translateY(224px);
+}
+
+.card-stack:nth-child(15) {
+    transform: translateY(240px);
+}
+
+.circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.logo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url("../assets/arrow.png");
+    background-size: cover;
+    border-radius: 100vmax;
+    background-position: center;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: consolas;
+    color: #ffffff;
+    font-size: 15px;
+    animation: textRotation 15s linear infinite;
+}
+
+@keyframes textRotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.text span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.2em;
+    transform-origin: 0 100px;
+}
+
+/* marquee div container */
+.marquee {
+    font-size: 2vw;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    height: 5.5vw;
+    overflow: hidden;
+    background-color: var(--green-color);
+    position: relative;
+}
+
+/* nested div inside the container */
+.marquee div {
+    display: block;
+    width: 200%;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 12s linear infinite;
+}
+
+/* span with text */
+.marquee span {
+    float: left;
+    width: 50%;
+}
+
+/* keyframe */
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+.section3-bg-img{
+    background-image: url("../assets/section\ 3/background.png");
+    /* The image used */
+    min-height: 60vh;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+
+
+footer {
+    display: flex;
+      flex-wrap:wrap;
+    justify-content:space-evenly;
+      background-color: black;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding-top: 30px;
+    }
+    ul{
+      list-style:none;    
+    } 
+    .space{
+      margin-top:10px;
+    }
+
+    footer ul li a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer-bottom-text{
+        font-size: 12px;
+    }
+
+@media screen and (max-width: 1318px) {
+    .hide-for-mobile {
+        display: none;
+    }
+
+    .marquee {
+        height: 6.5vw;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .Header-text {
+        line-height: 60px;
+        font-size: 3em;
+    }
+
+    .circle, .cursor {
+        display: none;
+    }
+
+    .marquee {
+        height: 8.5vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .marquee {
+        height: 8.5vw;
+    }
+
+    .marquee span img {
+        width: 10%;
+    }
+
+    .php {
+        width: 30px !important;
+    }
+
+    footer{ 
+        display:flex;
+        flex-direction:column !important;
+     }
+
+    .second-polygon {
+        position: relative;
+        left: 5px;
+        top: -20px;
+        animation: moveUpDown 1.5s infinite;
+    }
+
+    @keyframes moveUpDown {
+        0% {
+            top: -20;
+        }
+
+        50% {
+            top: -15px;
+            /* Adjust the value to control the height of the movement */
+        }
+
+        100% {
+            top: -20;
+        }
+    }
+
+}
+
+@media screen and (max-width: 610px) {
+    .marquee {
+        height: 10.5vw;
+    }
+
+    .marquee span img {
+        width: 10%;
+    }
+
+    .php {
+        width: 30px !important;
+    }
+}
+
+@media screen and (max-width: 497px) {
+    .marquee {
+        height: 14.5vw;
+    }
+
+    .marquee span img {
+        width: 12%;
+    }
+
+    .php {
+        width: 30px !important;
+    }
+
+    .Header-text {
+        line-height: 40px;
+        font-size: 2em;
+    }
+
+    .custom-sm-font {
+        font-size: 12px;
+    }
+
+    .All-polygon img {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .second-polygon {
+        position: relative;
+        left: -22px;
+        top: 10px;
+        animation: moveUpDown 1.5s infinite;
+    }
+
+    @keyframes moveUpDown {
+        0% {
+            top: 10px;
+        }
+
+        50% {
+            top: 15px;
+            /* Adjust the value to control the height of the movement */
+        }
+
+        100% {
+            top: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .Header-text {
+        line-height: 40px;
+        font-size: 2em;
+    }
+
+    .custom-sm-font {
+        font-size: 12px;
+    }
+
+    .All-polygon img {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .second-polygon {
+        position: relative;
+        left: 2px;
+        top: -13px;
+        animation: moveUpDown 1.5s infinite;
+    }
+
+    @keyframes moveUpDown {
+        0% {
+            top: -13px;
+        }
+
+        50% {
+            top: -10px;
+            /* Adjust the value to control the height of the movement */
+        }
+
+        100% {
+            top: -13px;
+        }
+    }
+}
