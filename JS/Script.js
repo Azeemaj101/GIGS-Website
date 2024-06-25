@@ -99,33 +99,62 @@ const $hoverables = document.querySelectorAll('.hoverable');
 // Listeners
 document.body.addEventListener('mousemove', onMouseMove);
 for (let i = 0; i < $hoverables.length; i++) {
-  $hoverables[i].addEventListener('mouseenter', onMouseHover);
-  $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+    $hoverables[i].addEventListener('mouseenter', onMouseHover);
+    $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
 }
 
 // Move the cursor
 function onMouseMove(e) {
-  const x = e.clientX;
-  const y = e.clientY;
-  
-  TweenMax.to($bigBall, .4, {
-    x: x - 15,
-    y: y - 15
-  })
-  TweenMax.to($smallBall, .1, {
-    x: x - 5,
-    y: y - 7
-  })
+    const x = e.clientX;
+    const y = e.clientY;
+
+    TweenMax.to($bigBall, .4, {
+        x: x - 15,
+        y: y - 15
+    })
+    TweenMax.to($smallBall, .1, {
+        x: x - 5,
+        y: y - 7
+    })
 }
 
 // Hover an element
 function onMouseHover() {
-  TweenMax.to($bigBall, .3, {
-    scale: 4
-  })
+    TweenMax.to($bigBall, .3, {
+        scale: 4
+    })
 }
 function onMouseHoverOut() {
-  TweenMax.to($bigBall, .3, {
-    scale: 1
-  })
+    TweenMax.to($bigBall, .3, {
+        scale: 1
+    })
 }
+
+
+$(document).ready(function ($) {
+    $('.card-slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        arrows: false,
+        responsive: [{
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 450,
+            settings: {
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+    });
+});
