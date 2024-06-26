@@ -152,14 +152,14 @@ body .cursor__ball circle {
     top: -2px;
 }
 
-.relative {
-    position: relative;
+.relative-circle {
+    position: relative !important;
 }
 
-.absolute {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+.absolute-circle {
+    position: absolute !important;
+    bottom: 0px !important;
+    right: 0px !important;
 }
 
 /* Stack CSS */
@@ -265,8 +265,8 @@ body .cursor__ball circle {
 
 .circle {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 100vmax;
     display: flex;
     align-items: center;
@@ -276,8 +276,8 @@ body .cursor__ball circle {
 
 .logo {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     background: url("../assets/arrow.png");
     background-size: cover;
     border-radius: 100vmax;
@@ -304,7 +304,73 @@ body .cursor__ball circle {
     position: absolute;
     left: 50%;
     font-size: 1.2em;
-    transform-origin: 0 100px;
+    transform-origin: 0 87px;
+}
+
+.bg-ring {
+    background-image: url("../assets/AI integrations/Frame 39157.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    /* Ensure the container takes full width */
+    height: auto;
+    /* Ensures the height adjusts automatically */
+    display: block;
+    /* Ensure the container behaves as a block element */
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+}
+
+.up-down {
+    animation: float-up-down 3s ease-in-out infinite both;
+}
+
+@keyframes float-up-down {
+    0% {
+        transform: translateY(0%)
+    }
+
+    50% {
+        transform: translateY(100%)
+    }
+
+    100% {
+        transform: translateY(0%)
+    }
+}
+
+.down-up {
+    animation: float-down-up 3s ease-in-out infinite both;
+}
+
+@keyframes float-down-up {
+    0% {
+        transform: translateY(100%)
+    }
+
+    50% {
+        transform: translateY(0%)
+    }
+
+    100% {
+        transform: translateY(100%)
+    }
+}
+
+.rotate {
+    animation: rotation 15s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
 }
 
 /* marquee div container */
@@ -373,6 +439,42 @@ body .cursor__ball circle {
 
 /* keyframe */
 @keyframes marquee-S13 {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+/* marquee div container */
+.marquee-S-11-1 {
+    font-size: 2vw;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 14.5vw;
+    overflow: hidden;
+    position: relative;
+}
+
+/* nested div inside the container */
+.marquee-S-11-1 div {
+    display: block;
+    width: 200%;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 12s linear infinite;
+}
+
+/* span with text */
+.marquee-S-11-1 span {
+    float: left;
+    width: 50%;
+}
+
+/* keyframe */
+@keyframes marquee {
     0% {
         left: 0;
     }
@@ -526,6 +628,56 @@ body .cursor__ball circle {
     box-shadow: none;
 }
 
+.line-S4-Stack {
+    height: 100px;
+}
+
+.S4-Small-img {
+    height: 70px !important;
+    width: 70px !important;
+    position: absolute;
+    top: 0;
+}
+
+.Stack-circle-inner {
+    height: 350px;
+    width: 350px;
+    position: absolute;
+}
+
+.Stack-circle-outer {
+    height: 450px;
+    width: 450px;
+}
+
+.section-11-0 {
+    background-color: #ffffff;
+}
+
+.S-11-1-img {
+    height: 150px;
+    width: 150px;
+    border: 1px dashed black !important;
+}
+
+.section-11-1 {
+    background-color: #edf9f1;
+}
+
+.Team-img-size {
+    height: 200px;
+}
+
+.Stack-Secion-1-Circle {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    z-index: -10;
+}
+
+.Stack-Secion-1-img {
+    z-index: 10;
+}
 
 footer {
     display: flex;
@@ -545,6 +697,24 @@ ul {
     margin-top: 10px;
 }
 
+.s5-bg {
+    position: absolute;
+    top: 0;
+}
+
+.s-absolute {
+    position: absolute;
+}
+
+.line-s5-stack {
+    height: 115px;
+}
+
+.s5-ball {
+    position: absolute;
+    left: 32px;
+}
+
 footer ul li a {
     color: white;
     text-decoration: none;
@@ -562,16 +732,43 @@ footer ul li a {
     .marquee, .marquee-S13 {
         height: 6.5vw;
     }
+
+    .marquee-S-11-1 {
+        height: 16vw;
+    }
 }
 
 @media screen and (max-width: 1200px) {
-    .card-stack img {
+    .card-stack .main-stack-img {
         width: 400px;
     }
 }
 
+@media screen and (max-width: 1150px) {
+    .marquee-S-11-1 {
+        height: 25vw;
+    }
+}
+
 @media screen and (max-width: 991px) {
-    .card-stack img {
+    .Stack-Secion-1-Circle {
+        position: absolute;
+        top: 90px;
+        left: 80px;
+        z-index: -10;
+    }
+
+    .S-11-1-img {
+        height: 100px;
+        width: 100px;
+        border: 1px dashed black !important;
+    }
+
+    .marquee-S-11-1 {
+        height: 20vw;
+    }
+
+    .card-stack .main-stack-img {
         width: 300px;
     }
 
@@ -580,7 +777,7 @@ footer ul li a {
         font-size: 3em;
     }
 
-    .circle, .cursor {
+    .circle {
         display: none;
     }
 
@@ -643,9 +840,45 @@ footer ul li a {
     .php {
         width: 30px !important;
     }
+
+    .S-11-1-img {
+        height: 90px;
+        width: 90px;
+        border: 1px dashed black !important;
+    }
+
+    .marquee-S-11-1 {
+        height: 23vw;
+    }
 }
 
 @media screen and (max-width: 497px) {
+    .s5-ball {
+        position: absolute;
+        left: 26px;
+    }
+
+    .line-s5-stack {
+        height: 98px;
+    }
+
+    .Stack-Secion-1-Circle {
+        position: absolute;
+        top: 60px;
+        left: 40px;
+        z-index: -10;
+    }
+
+    .S-11-1-img {
+        height: 60px;
+        width: 60px;
+        border: 1px dashed black !important;
+    }
+
+    .marquee-S-11-1 {
+        height: 23vw;
+    }
+
     .Heading-text-S15 {
         font-size: 1.5em;
     }
@@ -697,9 +930,36 @@ footer ul li a {
             top: 10px;
         }
     }
+
+    .Stack-circle-inner {
+        height: 250px;
+        width: 250px;
+        position: absolute;
+    }
+
+    .Stack-circle-outer {
+        height: 350px;
+        width: 350px;
+    }
 }
 
 @media screen and (max-width: 411px) {
+    .s5-ball {
+        position: absolute;
+        left: 16px;
+    }
+
+    .line-s5-stack {
+        height: 80px;
+    }
+
+    .Stack-Secion-1-Circle {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        z-index: -10;
+    }
+
     .Section3-man {
         height: 300px;
     }
@@ -748,5 +1008,26 @@ footer ul li a {
         100% {
             top: -13px;
         }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .s5-ball {
+        position: absolute;
+        left: 10px;
+    }
+
+    .line-s5-stack {
+        height: 80px;
+    }
+
+    .S-11-1-img {
+        height: 50px;
+        width: 50px;
+        border: 1px dashed black !important;
+    }
+
+    .marquee-S-11-1 {
+        height: 24vw;
     }
 }
